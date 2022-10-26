@@ -1,7 +1,12 @@
 require('dotenv').config()
 const { Sequelize, Model, DataTypes } = require('sequelize')
 const express = require('express')
+const cors = require('cors')
+
 const app = express()
+app.use(cors());
+app.use(express.json());
+app.use(express.json({ extended: true }));
 
 // const sequelize = new Sequelize('mysql-93288-0.cloudclusters.net', {
 //     dialectOptions: {
